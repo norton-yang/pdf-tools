@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Compress JPG, PNG, and WebP images directly in your browser. Free, private, and no upload required." />
+    <meta name="theme-color" content="#172b49" />
+    <meta name="robots" content="index,follow" />
+    <title>Image Compressor — Compress images privately in your browser</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23172b49'/%3E%3Cpath d='M16 20h32v24H16z' fill='none' stroke='%23d8ff6a' stroke-width='4'/%3E%3Ccircle cx='27' cy='29' r='4' fill='%23d8ff6a'/%3E%3Cpath d='m19 40 10-9 7 6 5-4 6 7' fill='none' stroke='%23d8ff6a' stroke-width='4'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Image Compressor home"><span class="brand-mark">▧</span> image<span>compressor</span></a>
+      <a class="header-link" href="#how-it-works">How it works</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">FREE · PRIVATE · IN YOUR BROWSER</p>
+        <h1 id="page-title">Make images lighter.<br /><em>Keep the quality.</em></h1>
+        <p class="hero-copy">Compress JPG, PNG, and WebP files without sending your images anywhere.</p>
+      </section>
+
+      <section class="workspace" aria-label="Image compression tool">
+        <div id="drop-zone" class="drop-zone" role="button" tabindex="0" aria-label="Upload images by clicking or dragging files here">
+          <input id="file-input" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden />
+          <div class="upload-glyph" aria-hidden="true">↑</div>
+          <h2>Drop your images here</h2>
+          <p>or <button id="browse-button" class="text-button" type="button">browse from your device</button></p>
+          <small>JPG, PNG, or WebP · Multiple files welcome</small>
+        </div>
+
+        <div class="controls" aria-label="Compression settings">
+          <label class="quality-control" for="quality">
+            <span>Compression quality <output id="quality-value" for="quality">82%</output></span>
+            <input id="quality" type="range" min="35" max="100" value="82" />
+            <small>Lower is smaller. Great for photos at 70–85%.</small>
+          </label>
+          <label class="format-control" for="format">
+            <span>Output format</span>
+            <select id="format">
+              <option value="auto">Keep original</option>
+              <option value="image/jpeg">JPG</option>
+              <option value="image/webp">WebP</option>
+              <option value="image/png">PNG</option>
+            </select>
+            <small>PNG is lossless; quality affects JPG and WebP.</small>
+          </label>
+        </div>
+
+        <div id="empty-message" class="privacy-note"><span>✓</span> Your images stay on this device. Processing happens locally in your browser.</div>
+        <section id="results" class="results" aria-live="polite" hidden>
+          <div class="results-heading">
+            <div><p class="eyebrow">READY TO SAVE</p><h2><span id="file-count">0</span> compressed images</h2></div>
+            <div class="result-actions"><button id="add-more" class="secondary-button" type="button">Add more</button><button id="download-all" class="primary-button" type="button">Download all (.zip)</button></div>
+          </div>
+          <div id="summary" class="summary"></div>
+          <div id="file-list" class="file-list"></div>
+        </section>
+      </section>
+
+      <section class="trust-strip" aria-label="Key benefits">
+        <div><strong>100% local</strong><span>No server uploads</span></div>
+        <div><strong>Multi-file</strong><span>Compress a whole batch</span></div>
+        <div><strong>Three formats</strong><span>JPG, PNG &amp; WebP</span></div>
+      </section>
+
+      <section id="how-it-works" class="info-section">
+        <p class="eyebrow">SIMPLE BY DESIGN</p>
+        <h2>How it works</h2>
+        <div class="steps">
+          <article><span>01</span><h3>Choose images</h3><p>Drag in files or choose them from your phone or computer.</p></article>
+          <article><span>02</span><h3>Set your preference</h3><p>Pick a quality level and an output format that suits your use.</p></article>
+          <article><span>03</span><h3>Save smaller files</h3><p>Download individually or bundle every finished image in one ZIP.</p></article>
+        </div>
+      </section>
+
+      <section class="details-grid">
+        <article><p class="eyebrow">SUPPORTED FORMATS</p><h2>Built for the images you use every day.</h2><p>Open JPG, PNG, and WebP. Export to JPG, WebP, or PNG when your browser supports the format.</p></article>
+        <article class="faq"><p class="eyebrow">FAQ</p><details open><summary>Are my images uploaded?</summary><p>No. This tool uses your browser’s canvas to process images locally. Nothing is sent to a server.</p></details><details><summary>Why can a PNG get bigger?</summary><p>PNG is a lossless format. For photos, exporting as JPG or WebP usually produces a much smaller file.</p></details><details><summary>Does it work on mobile?</summary><p>Yes. Use your phone’s file picker or share sheet to select multiple supported images.</p></details></article>
+      </section>
+    </main>
+    <footer>Image Compressor <span>·</span> Private image compression, in your browser.</footer>
+    <script src="app.js"></script>
+  </body>
+</html>
