@@ -75,6 +75,15 @@
       render();
     }
     input.value = '';
+    revealCompletedBatch();
+  }
+
+  function revealCompletedBatch() {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    requestAnimationFrame(() => {
+      results.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+      results.focus({ preventScroll: true });
+    });
   }
 
   function targetType(file) { return format.value === 'auto' ? file.type : format.value; }
