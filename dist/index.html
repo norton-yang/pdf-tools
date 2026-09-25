@@ -13,76 +13,76 @@
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Image Compressor home"><span class="brand-mark">▧</span> image<span>compressor</span></a>
-      <a class="header-link" href="#how-it-works">How it works</a>
+      <div class="header-actions"><a class="header-link" href="#how-it-works" data-i18n="navHow">How it works</a><label class="language-picker"><span class="sr-only" data-i18n="language">Language</span><select id="language" aria-label="Language"><option value="en">EN</option><option value="zh-CN">中文</option></select></label></div>
     </header>
 
     <main id="top">
       <section class="hero" aria-labelledby="page-title">
-        <p class="eyebrow">FREE · PRIVATE · IN YOUR BROWSER</p>
-        <h1 id="page-title">Make images lighter.<br /><em>Keep the quality.</em></h1>
-        <p class="hero-copy">Compress JPG, PNG, and WebP files without sending your images anywhere.</p>
+        <p class="eyebrow" data-i18n="eyebrow">FREE · PRIVATE · IN YOUR BROWSER</p>
+        <h1 id="page-title" data-i18n-html="heroTitle">Make images lighter.<br /><em>Keep the quality.</em></h1>
+        <p class="hero-copy" data-i18n="heroCopy">Compress JPG, PNG, and WebP files without sending your images anywhere.</p>
       </section>
 
-      <section class="workspace" aria-label="Image compression tool">
-        <div id="drop-zone" class="drop-zone" role="button" tabindex="0" aria-label="Upload images by clicking or dragging files here">
+      <section class="workspace" aria-label="Image compression tool" data-i18n-aria="workspaceLabel">
+        <div id="drop-zone" class="drop-zone" role="button" tabindex="0" aria-label="Upload images by clicking or dragging files here" data-i18n-aria="dropLabel">
           <input id="file-input" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden />
           <div class="upload-glyph" aria-hidden="true">↑</div>
-          <h2>Drop your images here</h2>
-          <p>or <button id="browse-button" class="text-button" type="button">browse from your device</button></p>
-          <small>JPG, PNG, or WebP · Multiple files welcome</small>
+          <h2 data-i18n="dropTitle">Drop your images here</h2>
+          <p><span data-i18n="or">or</span> <button id="browse-button" class="text-button" type="button" data-i18n="browse">browse from your device</button></p>
+          <small data-i18n="dropHelp">JPG, PNG, or WebP · Multiple files welcome</small>
         </div>
 
-        <div class="controls" aria-label="Compression settings">
+        <div class="controls" aria-label="Compression settings" data-i18n-aria="settingsLabel">
           <label class="quality-control" for="quality">
-            <span>Compression quality <output id="quality-value" for="quality">82%</output></span>
+            <span><span data-i18n="quality">Compression quality</span> <output id="quality-value" for="quality">82%</output></span>
             <input id="quality" type="range" min="35" max="100" value="82" />
-            <small>Lower is smaller. Great for photos at 70–85%.</small>
+            <small data-i18n="qualityHelp">Lower is smaller. Great for photos at 70–85%.</small>
           </label>
           <label class="format-control" for="format">
-            <span>Output format</span>
+            <span data-i18n="format">Output format</span>
             <select id="format">
-              <option value="auto">Keep original</option>
+              <option value="auto" data-i18n="keepOriginal">Keep original</option>
               <option value="image/jpeg">JPG</option>
               <option value="image/webp">WebP</option>
               <option value="image/png">PNG</option>
             </select>
-            <small>PNG is lossless; quality affects JPG and WebP.</small>
+            <small data-i18n="formatHelp">PNG is lossless; quality affects JPG and WebP.</small>
           </label>
         </div>
 
-        <div id="empty-message" class="privacy-note"><span>✓</span> Your images stay on this device. Processing happens locally in your browser.</div>
+        <div id="empty-message" class="privacy-note"><span>✓</span><span data-i18n="privacy">Your images stay on this device. Processing happens locally in your browser.</span></div>
         <section id="results" class="results" aria-live="polite" hidden>
           <div class="results-heading">
-            <div><p class="eyebrow">READY TO SAVE</p><h2><span id="file-count">0</span> compressed images</h2></div>
-            <div class="result-actions"><button id="add-more" class="secondary-button" type="button">Add more</button><button id="download-all" class="primary-button" type="button">Download all (.zip)</button></div>
+            <div><p class="eyebrow" data-i18n="ready">READY TO SAVE</p><h2><span id="file-count">0</span> <span data-i18n="compressedImages">compressed images</span></h2></div>
+            <div class="result-actions"><button id="add-more" class="secondary-button" type="button" data-i18n="addMore">Add more</button><button id="download-all" class="primary-button" type="button" data-i18n="downloadAll">Download all (.zip)</button></div>
           </div>
           <div id="summary" class="summary"></div>
           <div id="file-list" class="file-list"></div>
         </section>
       </section>
 
-      <section class="trust-strip" aria-label="Key benefits">
-        <div><strong>100% local</strong><span>No server uploads</span></div>
-        <div><strong>Multi-file</strong><span>Compress a whole batch</span></div>
-        <div><strong>Three formats</strong><span>JPG, PNG &amp; WebP</span></div>
+      <section class="trust-strip" aria-label="Key benefits" data-i18n-aria="benefitsLabel">
+        <div><strong data-i18n="local">100% local</strong><span data-i18n="noUpload">No server uploads</span></div>
+        <div><strong data-i18n="multiFile">Multi-file</strong><span data-i18n="batch">Compress a whole batch</span></div>
+        <div><strong data-i18n="formats">Three formats</strong><span>JPG, PNG &amp; WebP</span></div>
       </section>
 
       <section id="how-it-works" class="info-section">
-        <p class="eyebrow">SIMPLE BY DESIGN</p>
-        <h2>How it works</h2>
+        <p class="eyebrow" data-i18n="simple">SIMPLE BY DESIGN</p>
+        <h2 data-i18n="how">How it works</h2>
         <div class="steps">
-          <article><span>01</span><h3>Choose images</h3><p>Drag in files or choose them from your phone or computer.</p></article>
-          <article><span>02</span><h3>Set your preference</h3><p>Pick a quality level and an output format that suits your use.</p></article>
-          <article><span>03</span><h3>Save smaller files</h3><p>Download individually or bundle every finished image in one ZIP.</p></article>
+          <article><span>01</span><h3 data-i18n="step1Title">Choose images</h3><p data-i18n="step1Copy">Drag in files or choose them from your phone or computer.</p></article>
+          <article><span>02</span><h3 data-i18n="step2Title">Set your preference</h3><p data-i18n="step2Copy">Pick a quality level and an output format that suits your use.</p></article>
+          <article><span>03</span><h3 data-i18n="step3Title">Save smaller files</h3><p data-i18n="step3Copy">Download individually or bundle every finished image in one ZIP.</p></article>
         </div>
       </section>
 
       <section class="details-grid">
-        <article><p class="eyebrow">SUPPORTED FORMATS</p><h2>Built for the images you use every day.</h2><p>Open JPG, PNG, and WebP. Export to JPG, WebP, or PNG when your browser supports the format.</p></article>
-        <article class="faq"><p class="eyebrow">FAQ</p><details open><summary>Are my images uploaded?</summary><p>No. This tool uses your browser’s canvas to process images locally. Nothing is sent to a server.</p></details><details><summary>Why can a PNG get bigger?</summary><p>PNG is a lossless format. For photos, exporting as JPG or WebP usually produces a much smaller file.</p></details><details><summary>Does it work on mobile?</summary><p>Yes. Use your phone’s file picker or share sheet to select multiple supported images.</p></details></article>
+        <article><p class="eyebrow" data-i18n="supported">SUPPORTED FORMATS</p><h2 data-i18n="formatsTitle">Built for the images you use every day.</h2><p data-i18n="formatsCopy">Open JPG, PNG, and WebP. Export to JPG, WebP, or PNG when your browser supports the format.</p></article>
+        <article class="faq"><p class="eyebrow">FAQ</p><details open><summary data-i18n="faq1Q">Are my images uploaded?</summary><p data-i18n="faq1A">No. This tool uses your browser’s canvas to process images locally. Nothing is sent to a server.</p></details><details><summary data-i18n="faq2Q">Why can a PNG get bigger?</summary><p data-i18n="faq2A">PNG is a lossless format. For photos, exporting as JPG or WebP usually produces a much smaller file.</p></details><details><summary data-i18n="faq3Q">Does it work on mobile?</summary><p data-i18n="faq3A">Yes. Use your phone’s file picker or share sheet to select multiple supported images.</p></details></article>
       </section>
     </main>
-    <footer>Image Compressor <span>·</span> Private image compression, in your browser.</footer>
+    <footer>Image Compressor <span>·</span> <span data-i18n="footer">Private image compression, in your browser.</span></footer>
     <script src="app.js"></script>
   </body>
 </html>
